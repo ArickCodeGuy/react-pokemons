@@ -1,0 +1,29 @@
+.UITable {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  td {
+    padding: 5px 10px;
+    border: 1px solid black;
+  }
+
+  .tie {
+    &::before {
+      content: '⇅ ';
+    }
+  }
+
+  .min {
+    &::before {
+      content: '↓ ';
+    }
+    color: red;
+  }
+  .max {
+    &::before {
+      content: '↑ ';
+    }
+    color: rgb(155, 204, 80);
+  }
+}

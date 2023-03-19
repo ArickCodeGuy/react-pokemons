@@ -6,7 +6,6 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { dictionaryState, getDictionaryValue } from '~/store/dictionary';
 import { compareActions, compareState } from '~/store/compare';
 import { UIButton } from '~/components/UI/Button';
-import { notificationActions, notificationsState } from '~/store/notifications';
 import { useNotification } from './useNotification';
 
 function Bottom({

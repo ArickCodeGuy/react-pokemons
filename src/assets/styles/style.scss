@@ -332,6 +332,15 @@ img {
 //   }
 // }
 
+a,
+button,
+input,
+select {
+  &:focus {
+    outline: 3px solid rgb(126, 126, 254);
+  }
+}
+
 .link {
   text-decoration: none;
   color: var(--link-color);

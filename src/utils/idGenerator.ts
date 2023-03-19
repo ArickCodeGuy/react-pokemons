@@ -1,4 +1,4 @@
 export const idGenerator = () => {
-  let i = 0;
+  let i = 1;
   return () => (i += 1);
 };
