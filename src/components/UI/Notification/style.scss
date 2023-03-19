@@ -1,0 +1,15 @@
+.UINotification {
+  padding: 10px;
+  background-color: rgba(var(--rgba-bgc, 0.3));
+  pointer-events: auto;
+  width: 300px;
+  margin-left: auto;
+  &--ERROR {
+    background-color: red;
+    color: black;
+  }
+  &--SUCCESS {
+    background-color: rgb(155, 204, 80);
+    color: black;
+  }
+}

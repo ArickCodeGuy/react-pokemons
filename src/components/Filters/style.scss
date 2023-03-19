@@ -1,0 +1,20 @@
+.Filters {
+  padding: 15px;
+  background-color: lightblue;
+  &__items {
+    display: grid;
+    gap: 10px;
+  }
+}
+.filter {
+  &__title {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+  }
+  &__field {
+    > * {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+}

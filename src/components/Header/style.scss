@@ -1,0 +1,17 @@
+.Header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.Header__link {
+  color: var(--primary);
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+}

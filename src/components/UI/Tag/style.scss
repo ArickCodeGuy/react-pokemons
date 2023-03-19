@@ -1,0 +1,14 @@
+.UITag {
+  line-height: 1em;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: rgba(var(--rgba-bgc, 0.3));
+  padding: 10px;
+  min-width: 120px;
+  &--small {
+    min-width: unset;
+    font-size: 0.5em;
+    padding: 3px;
+  }
+}
