@@ -15,7 +15,8 @@ export type PokemonTypes =
   | 'Fire'
   | 'Psychic'
   | 'Ice'
-  | 'Rock';
+  | 'Rock'
+  | 'Bug';
 
 export const pokemonTypeInfo: Record<PokemonTypes, PokemonTypeInfo> = {
   Grass: {
@@ -47,6 +48,9 @@ export const pokemonTypeInfo: Record<PokemonTypes, PokemonTypeInfo> = {
   },
   Rock: {
     background: 'linear-gradient(180deg, #a38c21 50%, #a38c21 50%)',
+  },
+  Bug: {
+    background: 'linear-gradient(180deg, #729f3f 50%, #729f3f 50%)',
   },
 };
 

@@ -2,18 +2,18 @@ import { CommonPokemon } from '.';
 
 export default {
   id: 2,
-  name: 'Bulbasaur',
-  thumb: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png',
+  thumb: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png',
+  name: 'Ivysaur',
   description:
-    'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.',
+    'When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.',
   type: ['Grass', 'Poison'],
   weakness: ['Fire', 'Psychic', 'Flying', 'Ice'],
   stats: {
-    hp: 3,
-    attack: 3,
-    defence: 3,
-    specialAttack: 4,
-    specialDefence: 4,
-    speed: 3,
+    hp: 4,
+    attack: 4,
+    defense: 4,
+    special_attack: 5,
+    special_defense: 5,
+    speed: 4,
   },
 } as CommonPokemon;

@@ -2,12 +2,18 @@ import pokemons, { CommonPokemon } from '~/common/pokemons';
 
 export const fetchPokemonById = async (id: string): Promise<CommonPokemon> =>
   new Promise((res) => {
-    const pokemonIndex = pokemons.findIndex((p) => String(p.id) === id);
-    if (pokemonIndex === -1) throw new Error('Pokemon not found given id');
-
-    const result = pokemons[pokemonIndex];
+    const pokemon = pokemons.find((p) => String(p.id) === id);
+    if (!pokemon) throw new Error('Pokemon not found given id');
 
     setTimeout(() => {
-      res(result);
+      res(pokemon);
     }, 500);
   });
+
+export const fetchPokemons = async () => {
+  new Promise((res) => {
+    setTimeout(() => {
+      res(pokemons);
+    });
+  });
+};

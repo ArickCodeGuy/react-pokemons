@@ -14,9 +14,9 @@ export default (commonPokemonArr: CommonPokemon[]): MaxMinPokemonStats => {
   const result: MaxMinPokemonStats = {
     hp: useInitValue(),
     attack: useInitValue(),
-    defence: useInitValue(),
-    specialAttack: useInitValue(),
-    specialDefence: useInitValue(),
+    defense: useInitValue(),
+    special_attack: useInitValue(),
+    special_defense: useInitValue(),
     speed: useInitValue(),
   };
 

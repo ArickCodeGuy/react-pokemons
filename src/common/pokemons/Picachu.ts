@@ -1,9 +1,9 @@
 import { CommonPokemon } from '.';
 
 export default {
-  id: 1,
-  name: 'Picachu',
+  id: 25,
   thumb: 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png',
+  name: 'Pikachu',
   description:
     'When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.',
   type: ['Electric'],
@@ -11,9 +11,9 @@ export default {
   stats: {
     hp: 3,
     attack: 4,
-    defence: 3,
-    specialAttack: 3,
-    specialDefence: 3,
+    defense: 3,
+    special_attack: 3,
+    special_defense: 3,
     speed: 6,
   },
 } as CommonPokemon;
