@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { fetchPokemonById } from '~/api/pokemons';
+import { pokemonController } from '~/api/pokemons';
 import { CommonPokemon } from '~/common/pokemons';
 import { compareState } from '~/store/compare';
 import { UITable } from '../UI/Table';
@@ -34,7 +34,9 @@ export function PokemonCompareTable() {
   useEffect(() => {
     const pokemonIds = Object.keys(compare).map((i) => i);
 
-    Promise.all(pokemonIds.map(fetchPokemonById)).then(setPokemonsToCompare);
+    Promise.all(pokemonIds.map(pokemonController.searchOne)).then(
+      setPokemonsToCompare
+    );
   }, [compare]);
 
   return <UITable head={head} body={tableBody} />;

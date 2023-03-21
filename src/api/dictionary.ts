@@ -14,3 +14,7 @@ export const fetchDictionary = (): Promise<Dictionary> =>
       res(result);
     }, 500);
   });
+
+export const dictionaryController = {
+  get: fetchDictionary,
+};

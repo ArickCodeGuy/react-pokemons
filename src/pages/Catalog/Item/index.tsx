@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
-import { fetchPokemonById } from '~/api/pokemons';
+import { pokemonController } from '~/api/pokemons';
 import { CommonPokemon } from '~/common/pokemons';
 import { UITagContainer } from '~/components/UI/Tag/Container';
 import { dictionaryState, getDictionaryValue } from '~/store/dictionary';
@@ -16,7 +16,7 @@ export function CatalogItem() {
 
   const [pokemon, setPokemon] = useState<CommonPokemon>();
   useEffect(() => {
-    fetchPokemonById(pokemonId).then((p) => setPokemon(p));
+    pokemonController.searchOne(pokemonId).then((p) => setPokemon(p));
   });
   return (
     <>

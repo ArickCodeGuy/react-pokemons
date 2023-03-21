@@ -1,6 +1,6 @@
 .Filters {
   padding: 15px;
-  background-color: lightblue;
+  background-color: rgba(var(--rgba-bgc), 0.5);
   &__items {
     display: grid;
     gap: 10px;

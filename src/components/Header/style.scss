@@ -4,14 +4,30 @@
   top: 0;
   width: 100%;
   padding: 15px;
-  background-color: lightgrey;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+  background-color: rgba(var(--rgba-bgc), 0.3);
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
-.Header__link {
-  color: var(--primary);
-  font-weight: 500;
-  text-transform: uppercase;
-  text-decoration: none;
+.header-nav {
+  display: flex;
+  gap: 15px;
+  &__link {
+    color: var(--primary);
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
+
+.theme-changer {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--contrast);
+  color: rgba(var(--rgba-bgc), 1);
 }

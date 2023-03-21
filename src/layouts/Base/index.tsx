@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { fetchDictionary } from '~/api/dictionary';
+import { dictionaryController } from '~/api/dictionary';
 
 import { Header } from '~/components/Header';
 import { NAV_LINKS } from '~/constants';
@@ -12,7 +12,7 @@ export function Base() {
   const [_, setDictionary] = useRecoilState(dictionaryState);
 
   useEffect(() => {
-    fetchDictionary().then((d) => setDictionary(d));
+    dictionaryController.get().then((d) => setDictionary(d));
   }, []);
 
   return (

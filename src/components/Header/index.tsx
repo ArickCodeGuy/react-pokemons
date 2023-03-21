@@ -5,11 +5,16 @@ import './style.scss';
 export function Header({ links }: HeaderProps) {
   return (
     <header className="Header">
-      {links.map(({ to, label }) => (
-        <Link className="Header__link" key={label} to={to}>
-          {label}
-        </Link>
-      ))}
+      <div className="container">
+        <nav className="header-nav">
+          {links.map(({ to, label }) => (
+            <Link className="header-nav__link" key={label} to={to}>
+              {label}
+            </Link>
+          ))}
+        </nav>
+        <div className="theme-changer"></div>
+      </div>
     </header>
   );
 }

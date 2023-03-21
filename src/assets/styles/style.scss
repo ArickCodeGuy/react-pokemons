@@ -1,13 +1,7 @@
+@import '~/assets/styles/vars';
+
 :root {
   color-scheme: light dark;
-  // breakpoints
-  --breakpoint-xs: 0px;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-  --breakpoint-xxl: 1921px;
-  --breakpoint: var(--breakpoint-xs);
 
   // light
   --color-primary-light: #000;
@@ -27,7 +21,7 @@
   --rgba-bgc-dark: 0, 0, 0;
   --contrast-dark: #ffffff;
   --btn-color-dark: #91a3fb;
-  --link-color-dark: #3366cc;
+  --link-color-dark: #7ca8ff;
 
   // margins, paddings
   --section-margin-xs: 30px;
@@ -86,24 +80,24 @@ body {
   --negative-column-gutter: calc(var(--column-gutter) * -1);
   --container-width: var(--container-width-xs);
 
-  // set default as light theme
-  --color-primary: var(--color-primary-light);
-  --color-secondary: var(--color-secondary-light);
-  --bgc: var(--bgc-light);
-  --contrast: var(--contrast-light);
-  --btn-color: var(--btn-color-light);
-  --rgba-contrast: var(--rgba-contrast-light);
-  --rgba-bgc: var(--rgba-bgc-light);
-  --link-color: var(--link-color-light);
-  &.dark {
-    --color-primary: var(--color-primary-dark);
-    --color-secondary: var(--color-secondary-dark);
-    --bgc: var(--bgc-dark);
-    --contrast: var(--contrast-dark);
-    --btn-color: var(--btn-color-dark);
-    --rgba-contrast: var(--rgba-contrast-dark);
-    --rgba-bgc: var(--rgba-bgc-dark);
-    --link-color: var(--link-color-dark);
+  // set default as dark theme
+  --color-primary: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary-dark);
+  --bgc: var(--bgc-dark);
+  --contrast: var(--contrast-dark);
+  --btn-color: var(--btn-color-dark);
+  --rgba-contrast: var(--rgba-contrast-dark);
+  --rgba-bgc: var(--rgba-bgc-dark);
+  --link-color: var(--link-color-dark);
+  &.light {
+    --color-primary: var(--color-primary-light);
+    --color-secondary: var(--color-secondary-light);
+    --bgc: var(--bgc-light);
+    --contrast: var(--contrast-light);
+    --btn-color: var(--btn-color-light);
+    --rgba-contrast: var(--rgba-contrast-light);
+    --rgba-bgc: var(--rgba-bgc-light);
+    --link-color: var(--link-color-light);
   }
   @media (min-width: 576px) {
     --font-size: var(--font-size-sm);
@@ -276,27 +270,27 @@ img {
   .col-#{$i} {
     width: calc($i * 100% / 12);
   }
-  @media (min-width: 576) {
+  @media (min-width: $breakpoint-sm) {
     .col-sm-#{$i} {
       width: calc($i * 100% / 12);
     }
   }
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-md) {
     .col-md-#{$i} {
       width: calc($i * 100% / 12);
     }
   }
-  @media (min-width: 992px) {
+  @media (min-width: $breakpoint-lg) {
     .col-lg-#{$i} {
       width: calc($i * 100% / 12);
     }
   }
-  @media (min-width: 1200px) {
+  @media (min-width: $breakpoint-xl) {
     .col-xl-#{$i} {
       width: calc($i * 100% / 12);
     }
   }
-  @media (min-width: 1400px) {
+  @media (min-width: $breakpoint-xxl) {
     .col-xxl-#{$i} {
       width: calc($i * 100% / 12);
     }

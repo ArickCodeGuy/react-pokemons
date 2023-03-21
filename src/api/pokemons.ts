@@ -14,6 +14,11 @@ export const fetchPokemons = async () => {
   new Promise((res) => {
     setTimeout(() => {
       res(pokemons);
-    });
+    }, 500);
   });
+};
+
+export const pokemonController = {
+  search: fetchPokemons,
+  searchOne: fetchPokemonById,
 };

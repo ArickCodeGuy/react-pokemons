@@ -1,5 +1,9 @@
+@import '~/assets/styles/vars';
+
 .PokemonCardsContainer {
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
