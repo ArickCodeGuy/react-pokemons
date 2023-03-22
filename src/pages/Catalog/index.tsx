@@ -2,13 +2,12 @@ import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import pokemons from '~/common/pokemons';
 import { Filters } from '~/components/Filters';
-import { FilterItem, FilterItemOption } from '~/components/Filters/types';
-import { PokemonCardsContainer } from '~/components/PokemonCard/Container';
+import { FilterItem } from '~/components/Filters/types';
+import { PokemonCards } from '~/components/PokemonCards';
 import {
   dictionaryKeyToFilterOptions,
   dictionaryState,
 } from '~/store/dictionary';
-import commonPokemonToPokemonCard from '~/utils/commonPokemonToPokemonCard';
 import './style.scss';
 
 export function Catalog() {
@@ -51,12 +50,7 @@ export function Catalog() {
               />
             </div>
             <div className="col-lg-9">
-              <PokemonCardsContainer>
-                {pokemons.map((pokemon, key) => ({
-                  ...commonPokemonToPokemonCard(pokemon),
-                  key: `pokemon-${pokemon.id}-${key}`,
-                }))}
-              </PokemonCardsContainer>
+              <PokemonCards cards={pokemons} />
             </div>
           </div>
         </div>

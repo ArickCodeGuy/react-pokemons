@@ -8,7 +8,7 @@ export function UITag(props: UITagProps) {
     <button
       type="button"
       className={classBind}
-      style={{ background: props.background }}
+      style={{ background: props.background, color: props.color }}
     >
       {props.children}
     </button>

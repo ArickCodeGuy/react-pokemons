@@ -1,31 +1,10 @@
-import { PokemonTypes } from '../PokemonTypes';
-import Bulbasaur from './Bulbasaur';
-import Charmeleon from './Charmeleon';
-import Picachu from './Picachu';
-import Caterpie from './Caterpie';
-import Charmander from './Charmander';
-import Squirtle from './Squirtle';
-
-export type CommonPokemonStatsKeys = keyof CommonPokemonStats;
-
-export type CommonPokemonStats = {
-  hp: number;
-  attack: number;
-  defense: number;
-  special_attack: number;
-  special_defense: number;
-  speed: number;
-};
-
-export type CommonPokemon = {
-  id: number;
-  thumb: string;
-  name: string;
-  description: string;
-  type: PokemonTypes[];
-  weakness: PokemonTypes[];
-  stats: CommonPokemonStats;
-};
+import Bulbasaur from './items/Bulbasaur';
+import Charmeleon from './items/Charmeleon';
+import Picachu from './items/Picachu';
+import Caterpie from './items/Caterpie';
+import Charmander from './items/Charmander';
+import Squirtle from './items/Squirtle';
+import { CommonPokemon } from './types';
 
 const commonPokemons: CommonPokemon[] = [
   Picachu,

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { pokemonController } from '~/api/pokemons';
-import { CommonPokemon } from '~/common/pokemons';
+import { CommonPokemon } from '~/common/pokemons/types';
 import { compareState } from '~/store/compare';
 import { UITable } from '../UI/Table';
 import { UITableBody } from '../UI/Table/types';

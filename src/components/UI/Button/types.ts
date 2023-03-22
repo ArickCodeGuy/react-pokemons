@@ -5,5 +5,6 @@ export type UIButtonProps = {
   children?: ReactNode;
   className?: string;
   disabled?: boolean;
+  style?: React.CSSProperties;
   onClick?: () => void;
 };

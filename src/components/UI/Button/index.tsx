@@ -11,6 +11,7 @@ export function UIButton(props: UIButtonProps) {
       className={buttonClasses}
       type={props.type || 'button'}
       disabled={props.disabled}
+      style={props.style}
       onClick={props.onClick}
     >
       {props.children}

@@ -1,4 +1,4 @@
-.PokemonCard {
+.UICard {
   width: 300px;
   max-width: 100%;
   box-shadow: 0 0 0 1px rgba(var(--rgba-contrast), 0.3);
@@ -43,6 +43,7 @@
   &__bottom {
     margin-top: 15px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
     gap: 8px;

@@ -1,0 +1,22 @@
+.UIGraph {
+  width: 75px;
+  text-align: center;
+  &__name {
+    margin-bottom: 4px;
+    font-size: 0.5em;
+    line-height: 1em;
+  }
+  .graph {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    &__cell {
+      background-color: var(--contrast);
+      flex-grow: 1;
+      &--filled {
+        background-color: rgb(115, 115, 255);
+      }
+    }
+  }
+}

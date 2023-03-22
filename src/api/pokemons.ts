@@ -1,9 +1,10 @@
-import pokemons, { CommonPokemon } from '~/common/pokemons';
+import pokemons from '~/common/pokemons';
+import { CommonPokemon } from '~/common/pokemons/types';
 
 export const fetchPokemonById = async (id: string): Promise<CommonPokemon> =>
-  new Promise((res) => {
+  new Promise((res, rej) => {
     const pokemon = pokemons.find((p) => String(p.id) === id);
-    if (!pokemon) throw new Error('Pokemon not found given id');
+    if (!pokemon) return rej(`Pokemon with id ${id} not found`);
 
     setTimeout(() => {
       res(pokemon);

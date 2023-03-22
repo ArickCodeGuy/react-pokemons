@@ -1,6 +1,6 @@
 @import '~/assets/styles/vars';
 
-.PokemonCardsContainer {
+.UICardContainer {
   display: grid;
   gap: 30px;
   @media (min-width: $breakpoint-sm) {

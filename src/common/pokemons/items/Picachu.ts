@@ -1,4 +1,4 @@
-import { CommonPokemon } from '.';
+import { CommonPokemon } from '../types';
 
 export default {
   id: 25,

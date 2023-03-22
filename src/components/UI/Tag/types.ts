@@ -6,6 +6,7 @@ export type UITagContainerProps = {
 
 export type UITagProps = {
   background?: string;
+  color?: string;
   size?: 'small';
   children?: ReactNode;
 };
