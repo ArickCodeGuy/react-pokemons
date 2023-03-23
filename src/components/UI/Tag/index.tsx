@@ -1,13 +1,12 @@
+import concatStrings from '~/utils/concatStrings';
 import './style.scss';
 import { UITagProps } from './types';
 
 export function UITag(props: UITagProps) {
-  const classBind = `UITag ${props.size ? 'UITag--small' : ''}`;
-
   return (
     <button
       type="button"
-      className={classBind}
+      className={concatStrings('UITag', props.size && 'UITag--small')}
       style={{ background: props.background, color: props.color }}
     >
       {props.children}

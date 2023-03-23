@@ -1,0 +1,32 @@
+.UISceleton {
+  background-color: rgb(var(--bgc));
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    background: linear-gradient(
+      90deg,
+      rgba(var(--rgba-contrast), 0),
+      rgba(var(--rgba-contrast), 0.4),
+      rgba(var(--rgba-contrast), 0)
+    );
+    animation: skeleton-animation 1.2s infinite;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 1;
+  }
+}
+
+@keyframes skeleton-animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
