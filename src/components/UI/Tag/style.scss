@@ -1,3 +1,5 @@
+@import '~/assets/styles/vars';
+
 .UITag {
   line-height: 1em;
   border: none;
@@ -9,7 +11,9 @@
   min-width: 120px;
   &--small {
     min-width: unset;
-    font-size: 0.5em;
     padding: 3px;
+    @media (min-width: $breakpoint-md) {
+      font-size: 0.5em;
+    }
   }
 }

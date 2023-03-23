@@ -11,8 +11,8 @@ export function UICard(props: UICardProps) {
         <img src={props.thumb} alt={props.name} />
         {props.tags && (
           <div className="UICard__tags">
-            {props.tags.map((tag) => (
-              <UITag {...tag} />
+            {props.tags.map((tag, key) => (
+              <UITag {...tag} key={key} />
             ))}
           </div>
         )}

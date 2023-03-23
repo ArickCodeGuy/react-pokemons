@@ -4,12 +4,27 @@ import './style.scss';
 import { themeActions, themeState } from '~/store/theme';
 import { useRecoilState } from 'recoil';
 import { UIIcon } from '../UI/Icon';
+import { useEffect, useRef } from 'react';
+import { ElementFixer } from './ElementFixer';
 
 export function Header({ links }: HeaderProps) {
   const [theme, setTheme] = useRecoilState(themeState);
 
+  const header = useRef<HTMLElement>(null);
+  let fixer: ElementFixer;
+
+  useEffect(() => {
+    if (!header.current) return;
+
+    if (!fixer) {
+      fixer = new ElementFixer(header.current);
+    }
+
+    return fixer.destroy;
+  }, []);
+
   return (
-    <header className="Header">
+    <header className="Header" ref={header}>
       <div className="container">
         <nav className="header-nav">
           {links.map(({ to, label }) => (

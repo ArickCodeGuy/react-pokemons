@@ -1,5 +1,8 @@
+@import '~/assets/styles/vars';
+
 .UICard {
   width: 300px;
+  margin: 0 auto;
   max-width: 100%;
   box-shadow: 0 0 0 1px rgba(var(--rgba-contrast), 0.3);
   background-color: rgba(var(--rgba-bgc), 0.5);
@@ -26,8 +29,6 @@
     display: grid;
     gap: 5px;
     > * {
-      font-size: 0.5em;
-      line-height: 1em;
       padding: 3px;
       border-radius: 20px;
       background-color: rgba(var(--rgba-bgc, 0.3));

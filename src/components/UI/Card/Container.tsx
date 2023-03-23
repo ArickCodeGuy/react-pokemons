@@ -5,8 +5,8 @@ import './containerStyle.scss';
 export function UICardContainer(props: UICardContainerProps) {
   return (
     <div className="UICardContainer">
-      {props.items.map((card) => (
-        <UICard {...card} />
+      {props.items.map((card, key) => (
+        <UICard {...card} key={key} />
       ))}
     </div>
   );
