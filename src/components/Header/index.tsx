@@ -5,19 +5,21 @@ import { themeActions, themeState } from '~/store/theme';
 import { useRecoilState } from 'recoil';
 import { UIIcon } from '../UI/Icon';
 import { useEffect, useRef } from 'react';
-import { ElementFixer } from './ElementFixer';
+import { ElementFixer } from '../../utils/ElementFixer';
 
 export function Header({ links }: HeaderProps) {
   const [theme, setTheme] = useRecoilState(themeState);
 
   const header = useRef<HTMLElement>(null);
-  let fixer: ElementFixer;
+  let fixer: ReturnType<typeof ElementFixer>;
 
   useEffect(() => {
     if (!header.current) return;
 
     if (!fixer) {
-      fixer = new ElementFixer(header.current);
+      fixer = ElementFixer(header.current);
+    } else {
+      fixer.init();
     }
 
     return fixer.destroy;
