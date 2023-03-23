@@ -19,8 +19,8 @@ export function UIGraph(props: UIGraphProps) {
 
   return (
     <div className="UIGraph">
-      <div className="UIGraph__name">{props.name}</div>
       <div className="graph">{graphCells()}</div>
+      <div className="UIGraph__name">{props.name}</div>
     </div>
   );
 }

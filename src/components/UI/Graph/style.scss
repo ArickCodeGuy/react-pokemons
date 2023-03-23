@@ -1,8 +1,10 @@
 .UIGraph {
   width: 75px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   &__name {
-    margin-bottom: 4px;
     font-size: 0.5em;
     line-height: 1em;
   }

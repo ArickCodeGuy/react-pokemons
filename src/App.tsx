@@ -1,13 +1,15 @@
-import { BrowserRouter } from 'react-router-dom';
-import { AppRoutes } from '~/routes';
-import { RecoilRoot } from 'recoil';
+import { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import { dictionaryController } from './api/dictionary';
+import { Router } from './router';
+import { dictionaryState } from './store/dictionary';
 
 export function App() {
-  return (
-    <RecoilRoot>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
-    </RecoilRoot>
-  );
+  const [_, setDictionary] = useRecoilState(dictionaryState);
+
+  useEffect(() => {
+    dictionaryController.get().then((d) => setDictionary(d));
+  }, []);
+
+  return <Router />;
 }

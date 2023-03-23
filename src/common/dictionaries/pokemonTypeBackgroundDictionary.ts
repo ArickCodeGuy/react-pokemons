@@ -1,4 +1,4 @@
-import { DictionaryKey } from '~/types/types';
+import { DictionaryKey } from '~/common/dictionaries/types';
 import { pokemonTypes } from '../pokemonTypes';
 
 export default pokemonTypes.reduce(

@@ -1,12 +1,12 @@
 import { Route, Routes } from 'react-router-dom';
-
 import { Base } from '~/layouts/Base';
+
 import { Catalog } from '~/pages/Catalog';
 import { CatalogItem } from '~/pages/Catalog/Item';
 import { Compare } from '~/pages/Compare';
 import { Home } from '~/pages/Home';
 
-export function AppRoutes() {
+export function Router() {
   return (
     <Routes>
       <Route element={<Base />}>

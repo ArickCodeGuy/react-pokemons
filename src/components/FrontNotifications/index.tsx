@@ -2,7 +2,7 @@ import { useRecoilState } from 'recoil';
 import { UINotificationContainer } from '~/components/UI/Notification/container';
 import { notificationActions, notificationsState } from '~/store/notifications';
 
-export default function () {
+export function FrontNotifications() {
   const [notifications, setNotifications] = useRecoilState(notificationsState);
   const items = notifications.map((n) => ({
     ...n.notificationProps,

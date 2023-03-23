@@ -1,4 +1,4 @@
-import { Dictionary } from '~/types/types';
+import { Dictionary } from '~/common/dictionaries/types';
 import pokemonStatsDictionary from './pokemonStatsDictionary';
 import pokemonTypeBackgroundDictionary from './pokemonTypeBackgroundDictionary';
 import pokemonTypeColorDictionary from './pokemonTypeColorDictionary';

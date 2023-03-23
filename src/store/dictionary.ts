@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 import { FilterItemOption } from '~/components/Filters/types';
-import { Dictionary } from '~/types/types';
+import { Dictionary } from '~/common/dictionaries/types';
 
 export const dictionaryState = atom<Dictionary>({
   key: 'dictionary',

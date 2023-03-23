@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { RecoilRoot } from 'recoil';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from './App';
 
 // style
@@ -8,6 +10,10 @@ import './assets/styles/style.scss';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+      <Router>
+        <App />
+      </Router>
+    </RecoilRoot>
   </React.StrictMode>
 );

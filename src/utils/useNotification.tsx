@@ -5,9 +5,9 @@ import { notificationActions, notificationsState } from '~/store/notifications';
 export function useNotification() {
   const [notifications, setNotifications] = useRecoilState(notificationsState);
 
-  const pushNotification = (notif: UINotificationProps) => {
+  const pushNotification = (notificationToPush: UINotificationProps) => {
     setNotifications((n) => {
-      const newState = notificationActions.push(n, notif);
+      const newState = notificationActions.push(n, notificationToPush);
       setTimeout(() => {
         removeNotif(newState[newState.length - 1].id);
       }, 5000);
