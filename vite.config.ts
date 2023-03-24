@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 const resolve = (path: string) => pathResolve(__dirname, path);
 
 export default defineConfig({
-  base: '/react_pokemons/',
+  base: '/react-pokemons/',
   build: {
     rollupOptions: {
       // index for dev

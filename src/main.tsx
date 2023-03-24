@@ -11,7 +11,7 @@ import './assets/styles/style.scss';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <RecoilRoot>
-      <Router>
+      <Router basename="/react-pokemons/">
         <App />
       </Router>
     </RecoilRoot>
