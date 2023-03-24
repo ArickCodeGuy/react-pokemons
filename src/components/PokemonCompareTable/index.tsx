@@ -5,6 +5,7 @@ import { CommonPokemon } from '~/common/pokemons/types';
 import { compareState } from '~/store/compare';
 import { dictionaryState } from '~/store/dictionary';
 import { UITable } from '../UI/Table';
+import { UITableSceleton } from '../UI/Table/Sceleton';
 import { UITableBody } from '../UI/Table/types';
 import commonPokemonArrToMaxMinStats from './utils/commonPokemonArrToMaxMinStats';
 import commonPokemonToUIBodyRow from './utils/commonPokemonToUIBodyRow';
@@ -20,6 +21,8 @@ export function PokemonCompareTable() {
   const [pokemonsToCompare, setPokemonsToCompare] = useState<CommonPokemon[]>(
     []
   );
+
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!pokemonsToCompare.length) return;
@@ -37,9 +40,24 @@ export function PokemonCompareTable() {
     const pokemonIds = Object.keys(compare).map((i) => i);
 
     Promise.all(pokemonIds.map(pokemonController.searchOne)).then(
-      setPokemonsToCompare
+      (commonPokemons) => {
+        setPokemonsToCompare(commonPokemons);
+        setIsLoading(false);
+      }
     );
   }, [compare]);
 
-  return <UITable head={head} body={tableBody} />;
+  return (
+    <>
+      {(!isLoading && (
+        <UITable head={head} body={tableBody}>
+          {!tableBody?.rows.length && (
+            <tr>
+              <td colSpan={3}>No pokemons to compare</td>
+            </tr>
+          )}
+        </UITable>
+      )) || <UITableSceleton />}
+    </>
+  );
 }

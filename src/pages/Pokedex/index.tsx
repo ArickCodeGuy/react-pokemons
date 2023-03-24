@@ -3,13 +3,16 @@ import { useRecoilValue } from 'recoil';
 import { CommonPokemon } from '~/common/pokemons/types';
 import { Filters } from '~/components/Filters';
 import { FilterItem } from '~/components/Filters/types';
-import { PokemonCards } from '~/components/PokemonCards';
+import { PokemonCard } from '~/components/PokemonCard';
 import {
   dictionaryKeyToFilterOptions,
   dictionaryState,
 } from '~/store/dictionary';
 import './style.scss';
 import { pokemonController } from '~/api/pokemons';
+import { PokemonCardContainer } from '~/components/PokemonCard/Container';
+import { UICardContainer } from '~/components/UI/Card/Container';
+import { UICardSceleton } from '~/components/UI/Card/Sceleton';
 
 export function Pokedex() {
   const dictionary = useRecoilValue(dictionaryState);
@@ -59,7 +62,7 @@ export function Pokedex() {
               />
             </div>
             <div className="col-lg-9">
-              <PokemonCards cards={pokemonArr} />
+              <PokemonCardContainer pokemons={pokemonArr} />
             </div>
           </div>
         </div>

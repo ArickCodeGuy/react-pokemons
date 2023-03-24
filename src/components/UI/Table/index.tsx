@@ -35,7 +35,10 @@ export function UITable(props: UITableProps) {
     <div className="UITable">
       <table>
         <thead>{head()}</thead>
-        <tbody>{body()}</tbody>
+        <tbody>
+          {body()}
+          {props.children}
+        </tbody>
       </table>
     </div>
   );

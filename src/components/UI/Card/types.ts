@@ -3,7 +3,7 @@ import { UITagProps } from '../Tag/types';
 
 export type UICardContainerProps = {
   children?: ReactNode;
-  items: UICardProps[];
+  items?: UICardProps[];
 };
 
 export type UICardProps = {
@@ -13,4 +13,8 @@ export type UICardProps = {
   description: string;
   tags?: UITagProps[];
   bottom?: ReactNode;
+};
+
+export type UICardSliderProps = {
+  slides?: ReactNode[];
 };

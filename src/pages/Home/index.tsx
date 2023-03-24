@@ -1,8 +1,16 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { pokemonController } from '~/api/pokemons';
+import { CommonPokemon } from '~/common/pokemons/types';
+import { PokemonCardSlider } from '~/components/PokemonCard/Slider';
 import { UIButton } from '~/components/UI/Button';
 
 export function Home() {
   const navigate = useNavigate();
+
+  const [pokemonArr, setPokemonArr] = useState<CommonPokemon[]>([]);
+
+  pokemonController.search().then((pokemons) => setPokemonArr(pokemons));
 
   return (
     <>
@@ -54,11 +62,9 @@ export function Home() {
         </div>
       </section>
       <section className="banner banner--full">
-        <div
-          className="container"
-          style={{ display: 'flex', justifyContent: 'center' }}
-        >
-          <UIButton onClick={() => navigate('/pokedex')}>Pokedex</UIButton>
+        <div className="container">
+          <h2 className="h2">Pokemon showcase</h2>
+          <PokemonCardSlider pokemons={pokemonArr} />
         </div>
       </section>
     </>
