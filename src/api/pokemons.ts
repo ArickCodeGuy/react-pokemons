@@ -11,13 +11,12 @@ export const fetchPokemonById = async (id: string): Promise<CommonPokemon> =>
     }, 500);
   });
 
-export const fetchPokemons = async () => {
+export const fetchPokemons = async (): Promise<CommonPokemon[]> =>
   new Promise((res) => {
     setTimeout(() => {
       res(pokemons);
     }, 500);
   });
-};
 
 export const pokemonController = {
   search: fetchPokemons,

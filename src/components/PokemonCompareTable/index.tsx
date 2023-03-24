@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { pokemonController } from '~/api/pokemons';
 import { CommonPokemon } from '~/common/pokemons/types';
 import { compareState } from '~/store/compare';
+import { dictionaryState } from '~/store/dictionary';
 import { UITable } from '../UI/Table';
 import { UITableBody } from '../UI/Table/types';
 import commonPokemonArrToMaxMinStats from './utils/commonPokemonArrToMaxMinStats';
@@ -10,7 +11,9 @@ import commonPokemonToUIBodyRow from './utils/commonPokemonToUIBodyRow';
 import head from './utils/head';
 
 export function PokemonCompareTable() {
-  const [compare, setCompare] = useRecoilState(compareState);
+  const dictionary = useRecoilValue(dictionaryState);
+
+  const compare = useRecoilValue(compareState);
 
   const [tableBody, setTableBody] = useState<UITableBody>();
 
@@ -24,11 +27,10 @@ export function PokemonCompareTable() {
     const minMaxStats = commonPokemonArrToMaxMinStats(pokemonsToCompare);
 
     setTableBody({
-      rows: pokemonsToCompare.map((p) =>
-        commonPokemonToUIBodyRow(p, minMaxStats)
+      rows: pokemonsToCompare.map((commonPokemon) =>
+        commonPokemonToUIBodyRow(commonPokemon, minMaxStats, dictionary)
       ),
     });
-    console.log();
   }, [pokemonsToCompare]);
 
   useEffect(() => {

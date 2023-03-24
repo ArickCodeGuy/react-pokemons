@@ -1,4 +1,4 @@
-import { CommonPokemon, CommonPokemonStatsKeys } from '~/common/pokemons';
+import { CommonPokemon, CommonPokemonStatsKeys } from '~/common/pokemons/types';
 
 /**
  * @description key[0] - min, key[1] - max
@@ -8,7 +8,9 @@ export type MaxMinPokemonStats = Record<
   [number, number]
 >;
 
-export default (commonPokemonArr: CommonPokemon[]): MaxMinPokemonStats => {
+export default function (
+  commonPokemonArr: CommonPokemon[]
+): MaxMinPokemonStats {
   const useInitValue = (): [number, number] => [Infinity, -Infinity];
 
   const result: MaxMinPokemonStats = {
@@ -37,4 +39,4 @@ export default (commonPokemonArr: CommonPokemon[]): MaxMinPokemonStats => {
   });
 
   return result;
-};
+}

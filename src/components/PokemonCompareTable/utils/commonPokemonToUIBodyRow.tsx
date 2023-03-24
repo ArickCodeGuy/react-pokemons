@@ -1,11 +1,15 @@
-import { CommonPokemon } from '~/common/pokemons';
+import { useRecoilValue } from 'recoil';
+import { Dictionary } from '~/common/dictionaries/types';
+import { CommonPokemon } from '~/common/pokemons/types';
 import { UITableBodyRow } from '~/components/UI/Table/types';
+import { dictionaryState, getDictionaryValue } from '~/store/dictionary';
 import { MaxMinPokemonStats } from './commonPokemonArrToMaxMinStats';
 
-export default (
+export default function (
   commonPokemon: CommonPokemon,
-  minMaxStats: MaxMinPokemonStats
-): UITableBodyRow => {
+  minMaxStats: MaxMinPokemonStats,
+  dictionary: Dictionary
+): UITableBodyRow {
   const statsArr = Object.keys(commonPokemon.stats).map((statKey) => {
     // @ts-ignore
     const statValue: number = commonPokemon.stats[statKey];
@@ -28,7 +32,8 @@ export default (
 
     const stat = (
       <div>
-        {statKey}: <span className={statClassModificator}>{statValue}</span>
+        {getDictionaryValue(dictionary, 'pokemonStats', statKey)}:{' '}
+        <span className={statClassModificator}>{statValue}</span>
       </div>
     );
 
@@ -51,4 +56,4 @@ export default (
   };
 
   return result;
-};
+}

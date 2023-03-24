@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { UITagProps } from '../Tag/types';
 
 export type UICardContainerProps = {
+  children?: ReactNode;
   items: UICardProps[];
 };
 

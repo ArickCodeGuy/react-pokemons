@@ -6,6 +6,7 @@ import { dictionaryState, getDictionaryValue } from '~/store/dictionary';
 import { useNotification } from '~/utils/useNotification';
 import { UIButton } from '../UI/Button';
 import { UICardContainer } from '../UI/Card/Container';
+import { UICardSceleton } from '../UI/Card/Sceleton';
 import { UICardProps } from '../UI/Card/types';
 
 function Bottom({
@@ -71,5 +72,10 @@ export function PokemonCards({ cards }: { cards: CommonPokemon[] }) {
     ),
   }));
 
-  return <UICardContainer items={items} />;
+  return (
+    <UICardContainer items={items}>
+      {items.length === 0 &&
+        new Array(6).fill(null).map(() => <UICardSceleton />)}
+    </UICardContainer>
+  );
 }

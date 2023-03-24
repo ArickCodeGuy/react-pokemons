@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
-import pokemons from '~/common/pokemons';
+import { CommonPokemon } from '~/common/pokemons/types';
 import { Filters } from '~/components/Filters';
 import { FilterItem } from '~/components/Filters/types';
 import { PokemonCards } from '~/components/PokemonCards';
@@ -9,6 +9,7 @@ import {
   dictionaryState,
 } from '~/store/dictionary';
 import './style.scss';
+import { pokemonController } from '~/api/pokemons';
 
 export function Catalog() {
   const dictionary = useRecoilValue(dictionaryState);
@@ -37,6 +38,13 @@ export function Catalog() {
     setFilters(newFilterItems);
   }, [dictionary]);
 
+  const [pokemonArr, setPokemonArr] = useState<CommonPokemon[]>([]);
+  useEffect(() => {
+    pokemonController
+      .search()
+      .then((p) => setPokemonArr([...pokemonArr, ...p]));
+  }, []);
+
   return (
     <div>
       <section className="section">
@@ -50,7 +58,7 @@ export function Catalog() {
               />
             </div>
             <div className="col-lg-9">
-              <PokemonCards cards={pokemons} />
+              <PokemonCards cards={pokemonArr} />
             </div>
           </div>
         </div>
