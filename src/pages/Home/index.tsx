@@ -63,7 +63,10 @@ export function Home() {
       </section>
       <section className="banner banner--full">
         <div className="container">
-          <h2 className="h2">Pokemon showcase</h2>
+          <div className="header-container">
+            <h2 className="h2">Pokemon showcase</h2>
+            <UIButton onClick={() => navigate('/pokedex')}>To Pokedex</UIButton>
+          </div>
           <PokemonCardSlider pokemons={pokemonArr} />
         </div>
       </section>

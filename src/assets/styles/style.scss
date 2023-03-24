@@ -147,6 +147,11 @@ body {
   padding-right: 15px;
   width: var(--container-width);
 }
+.header-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
 .h1,
 h1 {
   font-size: 3em;
