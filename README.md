@@ -7,8 +7,8 @@ This is a simple project that i used to learn about react library
 `pnpm`  
 `Vite`  
 `React`  
-`typescript`  
-`recoil`
+`Typescript`  
+`Recoil`
 
 ## Goals
 
@@ -40,6 +40,6 @@ This project was build in about 8 work days but since I was doing that in my fre
 
 This project doesn't have real backend, but I've implemented some asynchronous functions to try to modulate real life experience working with promises.
 
-As of time I started this project I had more than 3 years of experience in web development and about 2 years in `vue.js`
+As of time I started this project I had more than 3 years of experience in web development and about 2 years in `Vue.js`
 
 If you have read this far I wanna say thank you for sharing your time and have a good day!
