@@ -36,7 +36,7 @@ export function Pokedex() {
     const newFilterItems = [...filterItems];
     newFilterItems[1] = {
       ...newFilterItems[1],
-      options: dictionaryKeyToFilterOptions(dictionary, 'pokemonTypes'),
+      options: dictionaryKeyToFilterOptions(dictionary, 'pokemonType'),
     };
     setFilters(newFilterItems);
   }, [dictionary]);
