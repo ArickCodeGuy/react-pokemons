@@ -32,8 +32,10 @@ export function UICardSlider(props: UICardSliderProps) {
     <div className="swiper" ref={sliderEl}>
       <div className="swiper-wrapper">
         {props.slides &&
-          props.slides.map((slide) => (
-            <div className="swiper-slide">{slide}</div>
+          props.slides.map((slide, k) => (
+            <div className="swiper-slide" key={k}>
+              {slide}
+            </div>
           ))}
       </div>
     </div>

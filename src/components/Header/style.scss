@@ -24,14 +24,16 @@
     position: absolute;
     top: -8px;
     right: -8px;
-    width: 1em;
-    height: 1em;
+    width: 1.2em;
+    height: 1.2em;
     border-radius: 50%;
     color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8em;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1em;
     background: linear-gradient(rgb(155, 204, 80) 50%, rgb(155, 204, 80) 50%);
   }
 }
