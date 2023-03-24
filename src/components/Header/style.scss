@@ -13,11 +13,28 @@
 .header-nav {
   display: flex;
   gap: 15px;
-  &__link {
-    color: var(--primary);
-    font-weight: 500;
-    text-transform: uppercase;
-    text-decoration: none;
+}
+.header-nav-link {
+  position: relative;
+  color: var(--primary);
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  &__notif {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1em;
+    background: linear-gradient(rgb(155, 204, 80) 50%, rgb(155, 204, 80) 50%);
   }
 }
 

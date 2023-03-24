@@ -5,8 +5,7 @@ import { compareActions, compareState } from '~/store/compare';
 import { dictionaryState, getDictionaryValue } from '~/store/dictionary';
 import { useNotification } from '~/utils/useNotification';
 import { UIButton } from '../UI/Button';
-import { UICardContainer } from '../UI/Card/Container';
-import { UICardSceleton } from '../UI/Card/Sceleton';
+import { UICard } from '../UI/Card';
 import { UICardProps } from '../UI/Card/types';
 
 function Bottom({
@@ -30,7 +29,7 @@ function Bottom({
   );
 }
 
-export function PokemonCards({ cards }: { cards: CommonPokemon[] }) {
+export function PokemonCard({ card }: { card: CommonPokemon }) {
   const dictionary = useRecoilValue(dictionaryState);
   const [compare, setCompare] = useRecoilState(compareState);
   const { pushNotification } = useNotification();
@@ -52,12 +51,12 @@ export function PokemonCards({ cards }: { cards: CommonPokemon[] }) {
     }
   };
 
-  const items: UICardProps[] = cards.map((commonPokemon) => ({
-    id: commonPokemon.id,
-    thumb: commonPokemon.thumb,
-    name: commonPokemon.name,
-    description: commonPokemon.description,
-    tags: commonPokemon.type.map((type) => ({
+  const cardProps: UICardProps = {
+    id: card.id,
+    thumb: card.thumb,
+    name: card.name,
+    description: card.description,
+    tags: card.type.map((type) => ({
       children: type,
       color: getDictionaryValue(dictionary, 'pokemonTypeColor', type),
       background: getDictionaryValue(dictionary, 'pokemonTypeBackground', type),
@@ -65,17 +64,12 @@ export function PokemonCards({ cards }: { cards: CommonPokemon[] }) {
     })),
     bottom: (
       <Bottom
-        compareClick={handleCompareClick.bind(undefined, commonPokemon)}
-        isComparing={compare[commonPokemon.id]}
-        navigate={() => navigate(`/pokedex/${commonPokemon.id}`)}
+        compareClick={handleCompareClick.bind(undefined, card)}
+        isComparing={compare[card.id]}
+        navigate={() => navigate(`/pokedex/${card.id}`)}
       />
     ),
-  }));
+  };
 
-  return (
-    <UICardContainer items={items}>
-      {items.length === 0 &&
-        new Array(6).fill(null).map(() => <UICardSceleton />)}
-    </UICardContainer>
-  );
+  return <UICard {...cardProps} />;
 }

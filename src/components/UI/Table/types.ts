@@ -24,4 +24,5 @@ export type UITableBody = {
 export type UITableProps = {
   head: UITableHead;
   body?: UITableBody;
+  children?: ReactNode;
 };

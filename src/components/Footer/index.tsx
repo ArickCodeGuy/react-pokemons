@@ -18,8 +18,8 @@ export function Footer() {
     <footer className="Footer banner">
       <div className="container">
         <div className="footer-links">
-          {FOOTER_LINKS.map((i) => (
-            <a href={i.link} target="_blank" className="footer-link">
+          {FOOTER_LINKS.map((i, k) => (
+            <a href={i.link} target="_blank" className="footer-link" key={k}>
               <img className="footer-link__img" src={i.img} alt={i.alt} />
               <div>{i.alt}</div>
             </a>

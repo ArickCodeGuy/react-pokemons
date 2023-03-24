@@ -13,6 +13,7 @@ specifiers:
   react-router-dom: 6.6.1
   recoil: ^0.7.7
   sass: ^1.58.3
+  swiper: ^9.1.1
   typescript: 4.9.4
   vite: 4.0.3
   vite-tsconfig-paths: ^4.0.3
@@ -24,6 +25,7 @@ dependencies:
   react-redux: 8.0.5_ie75ejlwqy5zh3tldgt7pftwcu
   react-router-dom: 6.6.1_biqbaboplfbrettd7655fr4n2y
   recoil: 0.7.7_biqbaboplfbrettd7655fr4n2y
+  swiper: 9.1.1
 
 devDependencies:
   '@types/node': 18.11.18
@@ -1305,6 +1307,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /ssr-window/4.0.2:
+    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==}
+    dev: false
+
   /strip-outer/1.0.1:
     resolution: {integrity: sha512-k55yxKHwaXnpYGsOzg4Vl8+tDrWylxDEpknGjhTiZB8dFRU5rTo9CAzeycivxV3s+zlTKwrs6WxMxR95n26kwg==}
     engines: {node: '>=0.10.0'}
@@ -1323,6 +1329,13 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /swiper/9.1.1:
+    resolution: {integrity: sha512-D1zArOwI6XCXCYBULPA4jTxpqp5SQtvntjinbXNZwXzj6P3KS51zSWuMarCLXq5oRISay4nX+TuShpxz8qhtbw==}
+    engines: {node: '>= 4.7.0'}
+    dependencies:
+      ssr-window: 4.0.2
+    dev: false
 
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
