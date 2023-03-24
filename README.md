@@ -33,3 +33,9 @@ All other version dependancies is provided in `package.json`
 ## Links
 
 [Github pages](https://arickcodeguy.github.io/react-pokemons/)
+
+## Extra
+
+This project was build in about 8 work days but since I was doing that in my free of work time it took a while to finish. Although I could've used more time to master some tricky things about react my main goal was to master react basics and a little extra, so there is not going to be some extremely optimized codebase. But I am pretty happy with the result.  
+As of time I started this project I had more than 3 years of experience in web development and about 2 years in `vue.js`  
+If you have read this far I wanna say thank you for sharing your time and have a good day!
