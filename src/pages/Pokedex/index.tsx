@@ -11,7 +11,7 @@ import {
 import './style.scss';
 import { pokemonController } from '~/api/pokemons';
 
-export function Catalog() {
+export function Pokedex() {
   const dictionary = useRecoilValue(dictionaryState);
 
   const [filterItems, setFilters] = useState<FilterItem[]>([
@@ -49,6 +49,7 @@ export function Catalog() {
     <div>
       <section className="section">
         <div className="container">
+          <h1 className="h1">Pokedex</h1>
           <div className="row">
             <div className="col-lg-3">
               <Filters

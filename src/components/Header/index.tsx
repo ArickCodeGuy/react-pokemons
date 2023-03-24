@@ -1,13 +1,28 @@
 import { Link } from 'react-router-dom';
-import type { HeaderProps } from './types';
+import type { HeaderProps, NavLinkProps } from './types';
 import './style.scss';
 import { themeActions, themeState } from '~/store/theme';
 import { useRecoilState } from 'recoil';
 import { UIIcon } from '../UI/Icon';
 import { useEffect, useRef } from 'react';
-import { ElementFixer } from '../../utils/ElementFixer';
+import { ElementFixer } from '~/utils/ElementFixer';
 
-export function Header({ links }: HeaderProps) {
+export const NAV_LINKS = [
+  {
+    to: '/',
+    label: 'Home',
+  },
+  {
+    to: '/pokedex',
+    label: 'Pokedex',
+  },
+  {
+    to: '/compare',
+    label: 'Compare',
+  },
+] as NavLinkProps[];
+
+export function Header(props: HeaderProps) {
   const [theme, setTheme] = useRecoilState(themeState);
 
   const header = useRef<HTMLElement>(null);
@@ -29,7 +44,7 @@ export function Header({ links }: HeaderProps) {
     <header className="Header" ref={header}>
       <div className="container">
         <nav className="header-nav">
-          {links.map(({ to, label }) => (
+          {NAV_LINKS.map(({ to, label }) => (
             <Link className="header-nav__link" key={label} to={to}>
               {label}
             </Link>

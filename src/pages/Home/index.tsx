@@ -58,7 +58,7 @@ export function Home() {
           className="container"
           style={{ display: 'flex', justifyContent: 'center' }}
         >
-          <UIButton onClick={() => navigate('/catalog')}>Catalog</UIButton>
+          <UIButton onClick={() => navigate('/pokedex')}>Pokedex</UIButton>
         </div>
       </section>
     </>

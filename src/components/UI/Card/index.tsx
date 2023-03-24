@@ -2,7 +2,6 @@ import truncate from '~/utils/truncate';
 import { UITag } from '../Tag';
 import { UICardProps } from './types';
 import './style.scss';
-import { UIButton } from '../Button';
 
 export function UICard(props: UICardProps) {
   return (

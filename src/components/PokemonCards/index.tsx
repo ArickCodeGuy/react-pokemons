@@ -67,7 +67,7 @@ export function PokemonCards({ cards }: { cards: CommonPokemon[] }) {
       <Bottom
         compareClick={handleCompareClick.bind(undefined, commonPokemon)}
         isComparing={compare[commonPokemon.id]}
-        navigate={() => navigate(`/catalog/${commonPokemon.id}`)}
+        navigate={() => navigate(`/pokedex/${commonPokemon.id}`)}
       />
     ),
   }));

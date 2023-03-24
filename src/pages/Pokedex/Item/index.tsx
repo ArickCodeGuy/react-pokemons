@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { pokemonController } from '~/api/pokemons';
-import { CommonPokemon } from '~/common/pokemons';
+import { CommonPokemon } from '~/common/pokemons/types';
 import { PokemonStatsGraphs } from '~/components/PokemonStatsGraphs';
-import { UIGraph } from '~/components/UI/Graph';
 import { UITagContainer } from '~/components/UI/Tag/Container';
 import { dictionaryState, getDictionaryValue } from '~/store/dictionary';
 import './style.scss';
 
-export function CatalogItem() {
+export function PokedexItem() {
   const params = useParams();
   const pokemonId = params.id;
   if (!pokemonId) throw new Error('pokemonId could not be undefined');

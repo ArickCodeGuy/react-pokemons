@@ -5,6 +5,7 @@ export function Compare() {
     <div>
       <section className="section">
         <div className="container">
+          <h1 className="h1">Compare</h1>
           <PokemonCompareTable />
         </div>
       </section>
