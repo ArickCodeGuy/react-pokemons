@@ -5,6 +5,14 @@ import { defineConfig } from 'vite';
 const resolve = (path: string) => pathResolve(__dirname, path);
 
 export default defineConfig({
+  base: '/react_pokemons/',
+  build: {
+    rollupOptions: {
+      // index for dev
+      // 404 for gh-pages
+      input: ['404.html', 'index.html'],
+    },
+  },
   server: {
     port: 3000,
   },
