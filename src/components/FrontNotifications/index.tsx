@@ -11,5 +11,5 @@ export function FrontNotifications() {
     },
   }));
 
-  return <UINotificationContainer items={items} />;
+  return <UINotificationContainer items={items.reverse()} />;
 }

@@ -10,5 +10,6 @@ export type UINotificationProps = {
   text?: string;
   children?: ReactNode;
   type?: UINotificationType;
+  ref?: any;
   onCloseClick?: () => void;
 };

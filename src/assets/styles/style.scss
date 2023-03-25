@@ -344,3 +344,26 @@ select {
   text-decoration: none;
   color: var(--link-color);
 }
+
+.fade-animation {
+  &-enter {
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: 0.3s;
+  }
+  &-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.3s;
+  }
+  &-exit {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.3s;
+  }
+  &-exit-active {
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: 0.3s;
+  }
+}

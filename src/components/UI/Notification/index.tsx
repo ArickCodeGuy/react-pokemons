@@ -5,6 +5,7 @@ import concatStrings from '~/utils/concatStrings';
 export function UINotification(props: UINotificationProps) {
   return (
     <div
+      ref={props.ref}
       className={concatStrings(
         'UINotification',
         `UINotification--${props.type || 'NEUTRAL'}`
