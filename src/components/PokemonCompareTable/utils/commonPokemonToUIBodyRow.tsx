@@ -1,14 +1,14 @@
-import { useRecoilValue } from 'recoil';
 import { Dictionary } from '~/common/dictionaries/types';
 import { CommonPokemon } from '~/common/pokemons/types';
 import { UITableBodyRow } from '~/components/UI/Table/types';
-import { dictionaryState, getDictionaryValue } from '~/store/dictionary';
+import { getDictionaryValue } from '~/store/dictionary';
 import { MaxMinPokemonStats } from './commonPokemonArrToMaxMinStats';
 
 export default function (
   commonPokemon: CommonPokemon,
   minMaxStats: MaxMinPokemonStats,
-  dictionary: Dictionary
+  dictionary: Dictionary,
+  onRemoveClick: (pokemonId: number) => void
 ): UITableBodyRow {
   const statsArr = Object.keys(commonPokemon.stats).map((statKey) => {
     // @ts-ignore
@@ -31,7 +31,7 @@ export default function (
       : '';
 
     const stat = (
-      <div>
+      <div key={statKey}>
         {getDictionaryValue(dictionary, 'pokemonStats', statKey)}:{' '}
         <span className={statClassModificator}>{statValue}</span>
       </div>
@@ -51,6 +51,14 @@ export default function (
       },
       stats: {
         children: <div>{statsArr}</div>,
+      },
+      remove: {
+        children: (
+          <button type="button" onClick={() => onRemoveClick(commonPokemon.id)}>
+            X
+          </button>
+        ),
+        cellStyle: { width: '10px' },
       },
     },
   };

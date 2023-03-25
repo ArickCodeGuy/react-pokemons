@@ -14,7 +14,7 @@ export function Home() {
 
   return (
     <>
-      <section className="banner banner--full">
+      <section className="section">
         <div className="container">
           <h1 className="h1">Pokemons</h1>
           <p>
@@ -61,7 +61,7 @@ export function Home() {
           </p>
         </div>
       </section>
-      <section className="banner banner--full">
+      <section className="section">
         <div className="container">
           <div className="header-container">
             <h2 className="h2">Pokemon showcase</h2>

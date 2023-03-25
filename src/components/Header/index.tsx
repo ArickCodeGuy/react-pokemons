@@ -49,9 +49,12 @@ export function Header(props: HeaderProps) {
           ))}
           <Link className="header-nav-link" to="/compare">
             Compare
-            <div className="header-nav-link__notif">
-              {Object.keys(compare).length}
-            </div>
+            {(Object.keys(compare).length && (
+              <div className="header-nav-link__notif">
+                {Object.keys(compare).length}
+              </div>
+            )) ||
+              ''}
           </Link>
         </nav>
         <button

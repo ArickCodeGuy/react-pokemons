@@ -39,7 +39,7 @@ export function PokemonCard({ card }: { card: CommonPokemon }) {
     if (compare[commonPokemon.id]) {
       setCompare(compareActions.removeItem(compare, commonPokemon.id));
       pushNotification({
-        text: `Removed ${commonPokemon.name} to comparation`,
+        text: `Removed ${commonPokemon.name} from comparation`,
         type: 'SUCCESS',
       });
     } else {

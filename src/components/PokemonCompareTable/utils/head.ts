@@ -13,4 +13,8 @@ export default [
     text: 'Stats',
     key: 'stats',
   },
+  {
+    text: '',
+    key: 'remove',
+  },
 ] as UITableHead;
