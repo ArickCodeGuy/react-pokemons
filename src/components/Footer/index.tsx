@@ -2,12 +2,12 @@ import './style.scss';
 
 const FOOTER_LINKS = [
   {
-    img: '/author.jpg',
+    img: '/react-pokemons/author.jpg',
     alt: 'Author',
     link: 'https://github.com/ArickCodeGuy',
   },
   {
-    img: '/github.png',
+    img: '/react-pokemons/github.png',
     alt: 'Github',
     link: 'https://github.com/ArickCodeGuy/react-pokemons',
   },
