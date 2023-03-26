@@ -28,7 +28,7 @@ All the above was used in this project.
 `npm` - 8.15.0  
 `pnpm` - 7.26.0
 
-All other version dependancies is provided in `package.json`
+All other version dependancies is provided are `package.json`
 
 ## Links
 
