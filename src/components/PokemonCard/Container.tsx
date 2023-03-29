@@ -6,11 +6,11 @@ import { UICardSceleton } from '../UI/Card/Sceleton';
 export function PokemonCardContainer({
   pokemons,
 }: {
-  pokemons: CommonPokemon[];
+  pokemons?: CommonPokemon[];
 }) {
   return (
     <UICardContainer>
-      {(pokemons.length &&
+      {(pokemons &&
         pokemons.map((card) => <PokemonCard card={card} key={card.id} />)) ||
         new Array(6).fill(null).map((_, k) => <UICardSceleton key={k} />)}
     </UICardContainer>

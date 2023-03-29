@@ -47,7 +47,7 @@ export function Pokedex() {
     setFilters(newFilterItems);
   };
 
-  const [pokemonArr, setPokemonArr] = useState<CommonPokemon[]>([]);
+  const [pokemonArr, setPokemonArr] = useState<CommonPokemon[]>();
   useEffect(() => {
     pokemonController.search().then((p) => setPokemonArr(p));
   }, []);
