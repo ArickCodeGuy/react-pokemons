@@ -6,6 +6,7 @@ import { CommonPokemon } from '~/common/pokemons/types';
 import { PokemonStatsGraphs } from '~/components/PokemonStatsGraphs';
 import { UITagContainer } from '~/components/UI/Tag/Container';
 import { dictionaryState, getDictionaryValue } from '~/store/dictionary';
+import { PokedexItemSceleton } from './Sceleton';
 import './style.scss';
 
 export function PokedexItem() {
@@ -18,10 +19,10 @@ export function PokedexItem() {
   const [pokemon, setPokemon] = useState<CommonPokemon>();
   useEffect(() => {
     pokemonController.searchOne(pokemonId).then((p) => setPokemon(p));
-  });
+  }, []);
   return (
     <>
-      {pokemon && (
+      {(pokemon && (
         <>
           <section className="section Main">
             <div className="container">
@@ -82,11 +83,12 @@ export function PokedexItem() {
           </section>
           <section className="section Stats">
             <div className="container">
+              <h2 className="h2">Stats</h2>
               <PokemonStatsGraphs {...pokemon} />
             </div>
           </section>
         </>
-      )}
+      )) || <PokedexItemSceleton />}
     </>
   );
 }

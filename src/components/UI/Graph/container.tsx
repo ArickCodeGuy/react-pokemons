@@ -4,7 +4,7 @@ import './containerStyle.scss';
 
 export function UIGraphContainer(props: UIGraphContainerProps) {
   return (
-    <div className="UIGraphContainer">
+    <div className="UIGraphContainer scrollbar">
       {props.items.map((i) => (
         <UIGraph {...i} maxValue={props.maxValue} />
       ))}

@@ -1,6 +1,8 @@
 .UISceletonText {
   display: grid;
   gap: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   :nth-child(1) {
     width: 100%;
     height: 1em;

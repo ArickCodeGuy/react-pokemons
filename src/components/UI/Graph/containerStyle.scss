@@ -1,4 +1,7 @@
 .UIGraphContainer {
+  width: 100%;
   display: flex;
   gap: var(--column-gap);
+  overflow-x: scroll;
+  padding-bottom: 10px;
 }
