@@ -46,12 +46,12 @@ export function PokemonCompareTable() {
   useEffect(() => {
     const pokemonIds = Object.keys(compare).map((i) => i);
 
-    Promise.all(pokemonIds.map(pokemonController.searchOne)).then(
-      (commonPokemons) => {
-        setPokemonsToCompare(commonPokemons);
-        setIsLoading(false);
-      }
-    );
+    Promise.all(
+      pokemonIds.map((id) => pokemonController.searchOne(`id=${id},EQUALS`))
+    ).then((commonPokemons) => {
+      setPokemonsToCompare(commonPokemons);
+      setIsLoading(false);
+    });
   }, [compare]);
 
   return (

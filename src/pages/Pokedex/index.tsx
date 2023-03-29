@@ -3,7 +3,6 @@ import { useRecoilValue } from 'recoil';
 import { CommonPokemon } from '~/common/pokemons/types';
 import { Filters } from '~/components/Filters';
 import { FilterItem } from '~/components/Filters/types';
-import { PokemonCard } from '~/components/PokemonCard';
 import {
   dictionaryKeyToFilterOptions,
   dictionaryState,
@@ -11,8 +10,7 @@ import {
 import './style.scss';
 import { pokemonController } from '~/api/pokemons';
 import { PokemonCardContainer } from '~/components/PokemonCard/Container';
-import { UICardContainer } from '~/components/UI/Card/Container';
-import { UICardSceleton } from '~/components/UI/Card/Sceleton';
+import { filterItemArrToQueryString } from '~/utils/filterItemArrToQueryString';
 
 export function Pokedex() {
   const dictionary = useRecoilValue(dictionaryState);
@@ -32,6 +30,7 @@ export function Pokedex() {
       options: [],
     },
   ]);
+
   useEffect(() => {
     const newFilterItems = [...filterItems];
     newFilterItems[1] = {
@@ -41,11 +40,16 @@ export function Pokedex() {
     setFilters(newFilterItems);
   }, [dictionary]);
 
+  const handleFiltersUpdate = (newFilterItems: FilterItem[]) => {
+    pokemonController
+      .search(filterItemArrToQueryString(newFilterItems))
+      .then((p) => setPokemonArr(p));
+    setFilters(newFilterItems);
+  };
+
   const [pokemonArr, setPokemonArr] = useState<CommonPokemon[]>([]);
   useEffect(() => {
-    pokemonController
-      .search()
-      .then((p) => setPokemonArr([...pokemonArr, ...p]));
+    pokemonController.search().then((p) => setPokemonArr(p));
   }, []);
 
   return (
@@ -58,7 +62,7 @@ export function Pokedex() {
               <Filters
                 title={'Filters'}
                 items={filterItems}
-                updateFilters={setFilters}
+                updateFilters={handleFiltersUpdate}
               />
             </div>
             <div className="col-lg-9">

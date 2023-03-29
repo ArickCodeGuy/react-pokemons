@@ -18,7 +18,9 @@ export function PokedexItem() {
 
   const [pokemon, setPokemon] = useState<CommonPokemon>();
   useEffect(() => {
-    pokemonController.searchOne(pokemonId).then((p) => setPokemon(p));
+    pokemonController
+      .searchOne(`id=${pokemonId},EQUALS`)
+      .then((p) => setPokemon(p));
   }, []);
   return (
     <>

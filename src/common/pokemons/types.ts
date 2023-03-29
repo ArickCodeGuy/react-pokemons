@@ -18,3 +18,9 @@ export type CommonPokemon = {
   weakness: string[];
   stats: CommonPokemonStats;
 };
+
+export type Filter = {
+  key: string;
+  value: string;
+  filterType: 'EQUALS' | 'LIKE';
+};

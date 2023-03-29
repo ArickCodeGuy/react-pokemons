@@ -1,24 +1,16 @@
-import pokemons from '~/common/pokemons';
-import { CommonPokemon } from '~/common/pokemons/types';
+import { getCommonPokemons } from '~/common/pokemons';
 
-export const fetchPokemonById = async (id: string): Promise<CommonPokemon> =>
-  new Promise((res, rej) => {
-    const pokemon = pokemons.find((p) => String(p.id) === id);
-    if (!pokemon) return rej(`Pokemon with id ${id} not found`);
+/**
+ * @param query - `${key}=${value},${filterType}`
+ */
+export const fetchOnePokemon = async (query?: string) => {
+  const [pokemon] = await getCommonPokemons(query);
+  if (!pokemon) throw new Error(`Pokemon not found`);
 
-    setTimeout(() => {
-      res(pokemon);
-    }, 500);
-  });
-
-export const fetchPokemons = async (): Promise<CommonPokemon[]> =>
-  new Promise((res) => {
-    setTimeout(() => {
-      res(pokemons);
-    }, 500);
-  });
+  return pokemon;
+};
 
 export const pokemonController = {
-  search: fetchPokemons,
-  searchOne: fetchPokemonById,
+  search: getCommonPokemons,
+  searchOne: fetchOnePokemon,
 };
