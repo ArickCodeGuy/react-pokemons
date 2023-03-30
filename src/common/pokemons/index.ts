@@ -49,15 +49,15 @@ export const getCommonPokemons = (query?: string): Promise<CommonPokemon[]> =>
           if (Array.isArray(pokemon[filter.key])) {
             const regexp = RegExp(filter.value, 'i');
             // @ts-ignore
-            return regexp.test(pokemon[filter.key].join(' '));
+            if (!regexp.test(pokemon[filter.key].join(' '))) return false;
           }
           // @ts-ignore
-          return String(pokemon[filter.key]) === filter.value;
+          if (!String(pokemon[filter.key]) === filter.value) return false;
         }
         if (filter.filterType === 'LIKE') {
           const regexp = RegExp(filter.value, 'i');
           // @ts-ignore
-          return regexp.test(pokemon[filter.key]);
+          if (!regexp.test(pokemon[filter.key])) return false;
         }
       }
 
