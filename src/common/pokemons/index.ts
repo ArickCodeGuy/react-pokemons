@@ -50,9 +50,10 @@ export const getCommonPokemons = (query?: string): Promise<CommonPokemon[]> =>
             const regexp = RegExp(filter.value, 'i');
             // @ts-ignore
             if (!regexp.test(pokemon[filter.key].join(' '))) return false;
+          } else {
+            // @ts-ignore
+            if (String(pokemon[filter.key]) !== filter.value) return false;
           }
-          // @ts-ignore
-          if (!String(pokemon[filter.key]) === filter.value) return false;
         }
         if (filter.filterType === 'LIKE') {
           const regexp = RegExp(filter.value, 'i');
