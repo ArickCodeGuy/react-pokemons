@@ -7,6 +7,7 @@ import { UIIcon } from '../UI/Icon';
 import { useEffect, useRef, useState } from 'react';
 import { ElementFixer } from '~/utils/ElementFixer';
 import { compareState } from '~/store/compare';
+import { UILink } from '../UI/Link/UILink';
 
 export const NAV_LINKS = [
   {
@@ -43,11 +44,11 @@ export function Header(props: HeaderProps) {
       <div className="container">
         <nav className="header-nav">
           {NAV_LINKS.map(({ to, label }) => (
-            <Link className="header-nav-link" key={label} to={to}>
+            <UILink className="header-nav-link" key={label} to={to}>
               {label}
-            </Link>
+            </UILink>
           ))}
-          <Link className="header-nav-link" to="/compare">
+          <UILink className="header-nav-link" to="/compare">
             Compare
             {(Object.keys(compare).length && (
               <div className="header-nav-link__notif">
@@ -55,7 +56,7 @@ export function Header(props: HeaderProps) {
               </div>
             )) ||
               ''}
-          </Link>
+          </UILink>
         </nav>
         <button
           type="button"

@@ -1,28 +1,16 @@
-import { useNavigate } from 'react-router-dom';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { CommonPokemon } from '~/common/pokemons/types';
-import { compareActions, compareState } from '~/store/compare';
 import { dictionaryState, getDictionaryValue } from '~/store/dictionary';
-import { useNotification } from '~/utils/useNotification';
 import { UIButton } from '../UI/Button';
 import { UICard } from '../UI/Card';
 import { UICardProps } from '../UI/Card/types';
+import { CompareButton } from '../CompareButton/CompareButton';
 
-function Bottom({
-  compareClick,
-  isComparing,
-  navigate,
-}: {
-  isComparing?: boolean;
-  compareClick?: () => void;
-  navigate: () => void;
-}) {
+function Bottom(props: CommonPokemon) {
   return (
     <>
-      <UIButton onClick={compareClick}>
-        {isComparing ? 'Remove from compare' : 'Add to compare'}
-      </UIButton>
-      <UIButton onClick={navigate} style={{ width: '100%' }}>
+      <CompareButton pokemonId={props.id} />
+      <UIButton to={`/pokedex/${props.id}`} style={{ width: '100%' }}>
         Pokemon page
       </UIButton>
     </>
@@ -31,25 +19,6 @@ function Bottom({
 
 export function PokemonCard({ card }: { card: CommonPokemon }) {
   const dictionary = useRecoilValue(dictionaryState);
-  const [compare, setCompare] = useRecoilState(compareState);
-  const { pushNotification } = useNotification();
-  const navigate = useNavigate();
-
-  const handleCompareClick = (commonPokemon: CommonPokemon) => {
-    if (compare[commonPokemon.id]) {
-      setCompare(compareActions.removeItem(compare, commonPokemon.id));
-      pushNotification({
-        text: `Removed ${commonPokemon.name} from comparation`,
-        type: 'SUCCESS',
-      });
-    } else {
-      setCompare(compareActions.addItem(compare, commonPokemon.id));
-      pushNotification({
-        text: `Added ${commonPokemon.name} to comparation`,
-        type: 'SUCCESS',
-      });
-    }
-  };
 
   const cardProps: UICardProps = {
     id: card.id,
@@ -62,13 +31,7 @@ export function PokemonCard({ card }: { card: CommonPokemon }) {
       background: getDictionaryValue(dictionary, 'pokemonTypeBackground', type),
       size: 'small',
     })),
-    bottom: (
-      <Bottom
-        compareClick={handleCompareClick.bind(undefined, card)}
-        isComparing={compare[card.id]}
-        navigate={() => navigate(`/pokedex/${card.id}`)}
-      />
-    ),
+    bottom: <Bottom {...card} />,
   };
 
   return <UICard {...cardProps} />;

@@ -2,7 +2,7 @@ import { UINotification } from '.';
 import { UINotificationContainerProps } from './types';
 import './containerStyle.scss';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { createRef, useEffect, useRef, useState } from 'react';
+import { createRef, useEffect, useState } from 'react';
 
 export function UINotificationContainer(props: UINotificationContainerProps) {
   const [items, setItems] = useState(

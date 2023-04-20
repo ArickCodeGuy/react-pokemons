@@ -8,6 +8,7 @@ import { UITagContainer } from '~/components/UI/Tag/Container';
 import { dictionaryState, getDictionaryValue } from '~/store/dictionary';
 import { PokedexItemSceleton } from './Sceleton';
 import './style.scss';
+import { CompareButton } from '~/components/CompareButton/CompareButton';
 
 export function PokedexItem() {
   const params = useParams();
@@ -42,7 +43,8 @@ export function PokedexItem() {
                 </div>
                 <div className="col-lg-6">
                   <h3 className="h3">Description</h3>
-                  <div className="description">{pokemon.description}</div>
+                  <p className="description">{pokemon.description}</p>
+                  <CompareButton pokemonId={pokemon.id} />
                   <h3 className="h3">Type</h3>
                   <div className="type">
                     <UITagContainer

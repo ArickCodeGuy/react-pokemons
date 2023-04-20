@@ -1,19 +1,19 @@
 import { UIButtonProps } from './types';
 
 import './style.scss';
-import { Link } from 'react-router-dom';
 import concatStrings from '~/utils/concatStrings';
+import { UILink } from '../Link/UILink';
+
+const Component = (props: UIButtonProps) => {
+  return (props.to && <UILink {...props} />) || <button {...props} />;
+};
 
 export function UIButton(props: UIButtonProps) {
-  return (
-    <button
-      className={concatStrings('UIButton', props.className)}
-      type={props.type || 'button'}
-      disabled={props.disabled}
-      style={props.style}
-      onClick={props.onClick}
-    >
-      {props.children}
-    </button>
-  );
+  const bind = {
+    ...props,
+    type: props.type || 'button',
+    className: concatStrings('UIButton', props.className),
+  };
+
+  return <Component {...bind} />;
 }

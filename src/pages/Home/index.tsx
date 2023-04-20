@@ -65,7 +65,7 @@ export function Home() {
         <div className="container">
           <div className="header-container">
             <h2 className="h2">Pokemon showcase</h2>
-            <UIButton onClick={() => navigate('/pokedex')}>To Pokedex</UIButton>
+            <UIButton to={'/pokedex'}>To Pokedex</UIButton>
           </div>
           <PokemonCardSlider pokemons={pokemonArr} />
         </div>
