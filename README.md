@@ -36,7 +36,7 @@ All other version dependancies is provided are `package.json`
 
 ## Extra
 
-This project was build in about 8 work days but since I was doing that in my free of work time it took a while to finish. Although I could've used more time to master some tricky things about react my main goal was to learn react basics and a little extra, so there is not going to be some extremely optimized codebase. But I am pretty happy with the result.
+This project was build in about 8 work days but since I was doing that in my free of work time. It took a while to finish. Although I could've used more time to master some tricky things about react my main goal was to learn react basics and a little extra, so there is not going to be some extremely optimized codebase. But I am pretty happy with the result.
 
 This project doesn't have real backend, but I've implemented some asynchronous functions to try to modulate real life experience working with promises.
 
