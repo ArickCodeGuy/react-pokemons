@@ -3,8 +3,9 @@
   left: 0;
   top: 0;
   width: 100%;
-  padding: 15px;
-  background-color: rgba(var(--rgba-bgc), 0.3);
+  padding: 8px;
+  background-color: var(--bgc);
+  box-shadow: 0 0 5px var(--contrast);
   .container {
     display: flex;
     align-items: center;
@@ -41,8 +42,9 @@
 
 .theme-changer {
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  font-size: 0.8rem;
+  width: 2em;
+  height: 2em;
   border: none;
   border-radius: 50%;
   display: flex;
@@ -52,6 +54,6 @@
   background-color: var(--contrast);
   color: rgba(var(--rgba-bgc), 1);
   &__icon {
-    font-size: 2rem;
+    font-size: 1.7em;
   }
 }
