@@ -65,7 +65,7 @@ export function Header(props: HeaderProps) {
         >
           <UIIcon
             class="theme-changer__icon"
-            name={theme === 'light' ? 'moon' : 'sun'}
+            name={theme === 'light' ? 'moon-o' : 'sun-o'}
           />
         </button>
       </div>

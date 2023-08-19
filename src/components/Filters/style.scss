@@ -1,6 +1,22 @@
 .Filters {
+  z-index: 110;
   padding: 15px;
-  background-color: rgba(var(--rgba-bgc), 0.5);
+  background-color: var(--bgc);
+  @media (max-width: 767.98px) {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    transition: 0.3s;
+    &--mobile-opened {
+      left: 0;
+    }
+  }
+  @media (min-width: 768px) {
+    background-color: rgba(var(--rgba-bgc), 0.5);
+  }
+
   &__items {
     display: grid;
     gap: 10px;
@@ -16,5 +32,22 @@
       width: 100%;
       padding: 10px;
     }
+  }
+}
+.filters-icon-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid var(--color-secondary);
+
+  .UIIcon {
+    font-size: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
   }
 }
