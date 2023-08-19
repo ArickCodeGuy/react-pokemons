@@ -4,7 +4,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "tsc && vite build && gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
